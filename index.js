@@ -13,21 +13,26 @@ exports.schema = Schema()
   .required(['domainMap'])
 
 exports.build = co.wrap(function * (opts) {
-  yield sonit('lambda/domain-map.json', opts.domainMap)
-  yield prosh(`
-    browserify --node -s default --im -o lambda/build.js lambda/index.js
-    touch -t 00000000 lambda/build.js lambda/domain-map.json
-    zip -X tera/lambda.zip lambda/*`)
+  try {
+    yield sonit('lambda/domain-map.json', opts.domainMap)
+    yield prosh(`
+      browserify --node -s default --im -o lambda/build.js lambda/index.js
+      touch -t 00000000 lambda/build.js lambda/domain-map.json
+      zip -X terra/lambda.zip lambda/*`)
 
-  yield sonit('tera/gateway_override.tf.json', terraGateway(spec))
+    yield sonit('terra/gateway_override.tf.json', terraGateway(spec))
+  } catch (e) {
+    console.log('err', e)
+  }
+
 })
 
 exports.clean = co.wrap(function * () {
   yield prosh(`
     rm lambda/domain-map.json
     rm lambda/build.js
-    rm tera/lambda.zip
-    rm tera/gateway_override.tf.json`)
+    rm terra/lambda.zip
+    rm terra/gateway_override.tf.json`)
 })
 
 const spec = {
