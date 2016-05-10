@@ -17,7 +17,7 @@ exports.build = co.wrap(function * (opts) {
     yield sonit('lambda/domain-map.json', opts.domainMap)
     yield prosh(`
       browserify --node -s default --im -o lambda/build.js lambda/index.js
-      touch -t 00000000 lambda/build.js lambda/domain-map.json
+      touch -t 197101010000 lambda/build.js lambda/domain-map.json
       zip -X terra/lambda.zip lambda/*`)
 
     yield sonit('terra/gateway_override.tf.json', terraGateway(spec))
