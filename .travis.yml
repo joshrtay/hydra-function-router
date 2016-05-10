@@ -2,6 +2,10 @@ language: node_js
 node_js:
 - '6'
 sudo: false
+install:
+  - npm install -g browserify
+  - wget https://releases.hashicorp.com/terraform/0.6.16/terraform_0.6.16_linux_amd64.zip -d terraform
+  - export PATH=$PATH:$PWD/terraform
 script: make test
 env:
   secure: 2eyXhcOaL5ZoEIvDQhGyr9JnpHD8PrWwEmJdeetRdk9HdZVTaTYMHnAXio44ZmIGNtaSrPnvRAtFQhsycPfEz+P73pIqitgw27XT/vN3+RhH2/95OHK1IbsCZUWXQUMGwmUSFGKHNDaxt/hCiv7S0H5+L3u9PQbPZ1YAnxiBVix/gB9LeKo8AKlwrRfs7lbbH4p0h54bWuGDMOqEW4J3yTJ5rtmDY54ETL1HJOR417RQx4gk3rjqJ4+ez31AowXZ77P6OfILgv2OIDgt0GvP3tIuRY3hdnLkxMfExvkoF0apvY0dMeSd9VnyO2p/b/EXq/rnCgQhD/F6+bx/RM1jK3moibT8usVb/deIcEZNwVyPkcHSe9kiKOXnX9yon4COGZnKFxCNW43WxS8xJmOzhseQe4J4aKviArgz7WsWLauyOgwdI7GIiIIu3tUDJmS0w4PciMcwLq5h45K/SvYapyOmmQMLQT8fdhIqfaXrs4saJzXwy/3OnxmWJGHXjh+4aMl3PUiZ0sllpsz05E/D7LzLis0NoXOjXCUOPUdwRXGDxja4k/j5xJjFIcqNSWtF0BhVBK4n0NO59J2Axghl/QssDKY/7fRlyVv8KdN4K9zVY2XTfPbhJ50zgq3qviNXQC2S4JHHM/HfUXGlv+UAHlEPQjCDQg934qR7ors492M=
