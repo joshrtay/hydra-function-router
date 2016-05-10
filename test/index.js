@@ -21,7 +21,7 @@ test('should build and clean', co.wrap(function * (t) {
       ':name.weo.io': 'weo-{name}'
     }
   })
-  yield prosh('AWS_REGION=us-west-2 TF_aws_region=us-west-2 terraform plan terra')
+  yield prosh('TF_VAR_aws_region=us-west-2 terraform plan terra')
   yield clean()
   t.ok(true) //just cuz
   t.end()
