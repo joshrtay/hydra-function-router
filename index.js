@@ -15,7 +15,7 @@ exports.schema = Schema()
 exports.build = co.wrap(function * (opts) {
   yield sonit('lambda/domain-map.json', opts.domainMap)
   yield prosh(`
-    browserify --node -s default -o lambda/build.js lambda/index.js
+    browserify --node -s default --im -o lambda/build.js lambda/index.js
     touch -t 00000000 lambda/build.js lambda/domain-map.json
     zip -X tera/lambda.zip lambda/*`)
 
