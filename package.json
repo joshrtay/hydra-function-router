@@ -1,0 +1,21 @@
+{
+  "name": "hydra-function-router",
+  "description": "A hydraform function router.",
+  "repository": "git://github.com/joshrtay/hydra-function-router.git",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "postversion": "git push && git push --tags && npm publish --access=public"
+  },
+  "dependencies": {
+    "@weo-edu/schema": "^0.1.7",
+    "co": "^4.6.0",
+    "prosh": "^1.1.0",
+    "sonit": "^1.0.0",
+    "terra-gateway": "^0.1.5"
+  },
+  "devDependencies": {
+    "tape": "^4.2.2"
+  }
+}
