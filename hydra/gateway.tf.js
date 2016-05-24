@@ -1,45 +1,8 @@
-/**
- * Modules
- */
-
 const terraGateway = require('terra-gateway')
-const prosh = require('prosh')
-const sonit = require('sonit')
-const Schema = require('@weo-edu/schema')
-const co = require('co')
 
-exports.schema = Schema()
-  .prop('domainMap', {type: 'object'})
-  .required(['domainMap'])
-
-
-exports.deps = {
-  foo: function (opts, config) {
-
-  }
+module.exports = function * () {
+  return terraGateway(spec)
 }
-
-exports.build = co.wrap(function * (opts) {
-  try {
-    yield sonit('lambda/domain-map.json', opts.domainMap)
-    yield prosh(`
-      browserify --node -s default --im -o lambda/build.js lambda/index.js
-      touch -t 197101010000 lambda/build.js lambda/domain-map.json
-      zip -X terra/lambda.zip lambda/*`)
-
-    yield sonit('terra/gateway_override.tf.json', terraGateway(spec))
-  } catch (e) {
-    console.log('err', e)
-  }
-})
-
-exports.clean = co.wrap(function * (opts) {
-  yield prosh(`
-    rm lambda/domain-map.json
-    rm lambda/build.js
-    rm terra/lambda.zip
-    rm terra/gateway_override.tf.json`)
-})
 
 const spec = {
   "id": "function_router",

@@ -11,11 +11,16 @@
   "dependencies": {
     "@weo-edu/schema": "^0.1.7",
     "co": "^4.6.0",
+    "hydra-aws-provider": "^0.1.1",
+    "node-lambda-zip": "^1.0.1",
     "prosh": "^1.1.0",
     "sonit": "^1.0.0",
     "terra-gateway": "^0.1.5"
   },
   "devDependencies": {
+    "co": "^4.6.0",
+    "hydraform": "^0.1.1",
     "tape": "^4.2.2"
-  }
+  },
+  "environment": {}
 }
