@@ -3,11 +3,11 @@ node_js:
 - '6'
 sudo: false
 install:
-  - npm install
-  - npm install -g browserify
-  - wget https://releases.hashicorp.com/terraform/0.6.16/terraform_0.6.16_linux_amd64.zip
-  - unzip terraform_0.6.16_linux_amd64.zip -d terraform
-  - export PATH=$PATH:$PWD/terraform
+- npm install
+- npm install -g browserify
+- wget https://releases.hashicorp.com/terraform/0.6.16/terraform_0.6.16_linux_amd64.zip
+- unzip terraform_0.6.16_linux_amd64.zip -d terraform
+- export PATH=$PATH:$PWD/terraform
 script: make test
 env:
-  secure: 2eyXhcOaL5ZoEIvDQhGyr9JnpHD8PrWwEmJdeetRdk9HdZVTaTYMHnAXio44ZmIGNtaSrPnvRAtFQhsycPfEz+P73pIqitgw27XT/vN3+RhH2/95OHK1IbsCZUWXQUMGwmUSFGKHNDaxt/hCiv7S0H5+L3u9PQbPZ1YAnxiBVix/gB9LeKo8AKlwrRfs7lbbH4p0h54bWuGDMOqEW4J3yTJ5rtmDY54ETL1HJOR417RQx4gk3rjqJ4+ez31AowXZ77P6OfILgv2OIDgt0GvP3tIuRY3hdnLkxMfExvkoF0apvY0dMeSd9VnyO2p/b/EXq/rnCgQhD/F6+bx/RM1jK3moibT8usVb/deIcEZNwVyPkcHSe9kiKOXnX9yon4COGZnKFxCNW43WxS8xJmOzhseQe4J4aKviArgz7WsWLauyOgwdI7GIiIIu3tUDJmS0w4PciMcwLq5h45K/SvYapyOmmQMLQT8fdhIqfaXrs4saJzXwy/3OnxmWJGHXjh+4aMl3PUiZ0sllpsz05E/D7LzLis0NoXOjXCUOPUdwRXGDxja4k/j5xJjFIcqNSWtF0BhVBK4n0NO59J2Axghl/QssDKY/7fRlyVv8KdN4K9zVY2XTfPbhJ50zgq3qviNXQC2S4JHHM/HfUXGlv+UAHlEPQjCDQg934qR7ors492M=
+  secure: aIi4WgFxdIfbhmFSQGHoRq6Wjb1b1WEkTXTcoW/ThSffXI5He+i/6s6mZUinOSuG3X2zbv5Zq09Gw8wZFhldUK62u2FFR8Qv9Vb0SJO6VBW3Izx/hs9fRgcIl9mT6xJIsuxFGrsfjvly852s0zMfim+4tY9RDa5SiOppYrHNbubWrhY+SAuoXX2vnZw7AdV5Btu9eKo0GGnKpZTEmMPLSMxsgY17q33bbM9Gaq1DKzZgwbEvYL7VTTogQ1fbtKN/GrPzPPAI7gbTzLIS/EvQNhA0dc+hnjcrixormSkh3n5CNS2HtvkgpTnWAkROoeAhgJwFO/ZUIiSdrHDk55Uv2mVWFFqzL8D8CU8UaB7BSLhXog5yAR1I2I8sEedY6kFtrh0c5i8tmZ+MPkiLkoGuH55b/q6cpOOXLxfC7siXS77TEUavvUIbANn8VnWuE5GMwYt3UWj388raYeTDFBpmHZpPsyt3Y866j8za/DieXJL/UPkP2LialAhhPs3zOtIYA0xi399/n5sQgPuEbG4FS9zFJ+8LUk/ibWJfgs8iE9+kWGMVtJW+oUkiHZUFTXGJPwHr4LmJspYfan8G4+7uJkmi5xVgSS9lzn4UyeF40FqVJUfUqqFNh0BRqKi01YWv8TSkR7J+Ky7VI0vijTqmejveq7kgl/Xpbrpvc7n32EY=
