@@ -8,6 +8,7 @@ install:
 - wget https://releases.hashicorp.com/terraform/0.6.16/terraform_0.6.16_linux_amd64.zip
 - unzip terraform_0.6.16_linux_amd64.zip -d terraform
 - export PATH=$PATH:$PWD/terraform
+- echo $AWS_ACCESS_KEY_ID
 script: make test
 env:
   global:
