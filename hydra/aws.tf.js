@@ -1,3 +1,9 @@
 
 
-module.exports = require('hydra-aws-provider')
+module.exports = {
+  "variable": {
+    "aws_region": {
+      "default": "us-west-2"
+    }
+  }
+}
