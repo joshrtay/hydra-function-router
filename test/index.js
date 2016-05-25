@@ -25,7 +25,6 @@ test('should build', co.wrap(function * (t) {
         ':name.weo.io': 'weo{name}'
       }
     })
-    console.log('dir', dir)
     t.ok(fs.exists(join(dir, 'lambda_override.tf.json')))
     t.ok(fs.exists(join(dir, 'lambda/domin-map.json')))
     t.end()
@@ -46,7 +45,8 @@ test('should be integrate with terraform', co.wrap(function * (t) {
       ':name.weo.io': 'weo{name}'
     }
   })
-  yield prosh(`terraform plan ${dir}`)
+  console.log('acess key id', process.env.AWS_ACCESS_KEY_ID)
+  yield prosh(`echo $AWS_ACCESS_KEY_ID; terraform plan ${dir}`)
   t.ok(true)
   t.end()
 }))
