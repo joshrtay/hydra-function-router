@@ -45,8 +45,7 @@ test('should be integrate with terraform', co.wrap(function * (t) {
       ':name.weo.io': 'weo{name}'
     }
   })
-  console.log('acess key id', process.env.AWS_ACCESS_KEY_ID)
-  yield prosh(`echo $AWS_ACCESS_KEY_ID; terraform plan ${dir}`)
+  yield prosh(`terraform plan ${dir}`)
   t.ok(true)
   t.end()
 }))
