@@ -7,7 +7,9 @@ module.exports = {
     aws_lambda_function: {
       function_router: {
         filename: function * (params) {
-          yield sonit(join(__dirname, 'lambda/domain-map.json'), params.domainMap || {})
+          if (params.domainMap) {
+            yield sonit(join(__dirname, 'lambda/opts.json'), params.domainMap)
+          }
           return yield zip('lambda', 'lambda.zip', {cwd: __dirname})
         },
         function_name: "hydra_function_router",

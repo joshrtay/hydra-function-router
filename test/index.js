@@ -18,11 +18,11 @@ test('should build', co.wrap(function * (t) {
     const dir = yield hydraform({
       buildDir: 'test/hydra_modules',
       domainMap: {
-        'f.weo.io/:name': {
-          name: 'weo{name}',
+        'f.weo.io(/:name)(/*)': {
+          name: 'weo-{name}',
           base: '/{name}'
         },
-        ':name.weo.io': 'weo{name}'
+        '(:name).weo.io(/*)': 'weo-{name}'
       }
     })
     t.ok(fs.exists(join(dir, 'lambda_override.tf.json')))

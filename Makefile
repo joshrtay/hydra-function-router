@@ -10,7 +10,7 @@ BIN = ./node_modules/.bin
 #
 
 test:
-	@node test/*.js
+	@${BIN}/tape test/*.js
 
 validate:
 	@standard
