@@ -4,7 +4,6 @@
   "repository": "git://github.com/joshrtay/hydra-function-router.git",
   "version": "0.1.3",
   "license": "MIT",
-  "main": "lib/index.js",
   "scripts": {
     "postversion": "git push && git push --tags && npm publish --access=public"
   },
