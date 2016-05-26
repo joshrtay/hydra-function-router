@@ -1,0 +1,7 @@
+{
+  "f.:domain.:tld(/:name)(/*)": {
+    "name": "{domain}-{tld}-{name}",
+    "base": "/{name}"
+  },
+  "(:name.):domain.:tld(/*)": "{domain}-{tld}-{name}"
+}
